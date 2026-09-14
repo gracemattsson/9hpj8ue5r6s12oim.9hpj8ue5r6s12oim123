@@ -32,6 +32,30 @@
       margin: 0 auto;
       padding: 3rem 1.25rem 5.5rem;
     }
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+    .nav-btn {
+      background: var(--ink);
+      color: #f4efe6;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: 1px solid var(--ink);
+      transition: all 0.2s;
+    }
+    .nav-btn:hover {
+      background: var(--mark);
+      border-color: var(--mark);
+    }
+    .nav-btn.active {
+      background: var(--mark);
+      border-color: var(--mark);
+    }
     .stamp {
       display: inline-block;
       font-family: "IBM Plex Mono", monospace;
@@ -237,6 +261,10 @@
 </head>
 <body>
   <div class="wrap">
+    <div class="nav-buttons">
+      <a href="/" class="nav-btn active">Home</a>
+      <a href="/leaks" class="nav-btn">Leaks</a>
+    </div>
     <p class="stamp">IAmNotAVillain.xyz</p>
     <h1>IAmNotAVillain</h1>
     <p class="sub">Revolut user database</p>
