@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IAmNotAVillain</title>
+  <meta name="description" content="IAmNotAVillain.xyz">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;560;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    :root {
+      --bg: #efeae0;
+      --paper: #f7f3ea;
+      --ink: #171614;
+      --mute: #5c584f;
+      --line: #d4cec0;
+      --mark: #0f5c42;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 10% -10%, #e4efe6 0, transparent 42%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Instrument Sans", sans-serif;
+    }
+    .wrap {
+      max-width: 36rem;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 5.5rem;
+    }
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+    .nav-btn {
+      background: var(--ink);
+      color: #f4efe6;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: 1px solid var(--ink);
+      transition: all 0.2s;
+    }
+    .nav-btn:hover {
+      background: var(--mark);
+      border-color: var(--mark);
+    }
+    .nav-btn.active {
+      background: var(--mark);
+      border-color: var(--mark);
+    }
+    .stamp {
+      display: inline-block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mark);
+      border: 1px solid var(--mark);
+      padding: 0.28rem 0.5rem;
+      margin: 0 0 1rem;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.7rem, 7vw, 2.5rem);
+      letter-spacing: -0.05em;
+      line-height: 0.95;
+    }
+    .sub {
+      margin: 0 0 0.9rem;
+      color: var(--mute);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+    }
+    html { scroll-behavior: smooth; }
+    .jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem 1rem;
+      margin: 0 0 2rem;
+    }
+    .jump a {
+      color: var(--mute);
+      font-size: 0.84rem;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .jump a:hover {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+    .proof {
+      margin-top: 1.1rem;
+    }
+    .proof img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--ink);
+      background: #ddd8cc;
+    }
+    .proof .blurred {
+      filter: blur(10px);
+    }
+    .proof .ph {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border: 1px solid var(--ink);
+      background: #d8d2c4;
+      color: var(--mute);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .proof .ph.blurred {
+      filter: blur(8px);
+      user-select: none;
+    }
+    .caption {
+      margin: 0.45rem 0 1.1rem;
+      color: var(--mute);
+      font-size: 0.88rem;
+    }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 1.35rem 1.2rem;
+      margin-bottom: 0.85rem;
+    }
+    h2 {
+      margin: 0 0 0.7rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mark);
+    }
+    p { margin: 0 0 0.75rem; font-size: 1rem; line-height: 1.55; color: #26241f; }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      margin: 0;
+      padding: 0 0 0 1.1rem;
+      color: #26241f;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+    .cta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+    }
+    .cta a, .session-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--ink);
+      color: #f4efe6;
+      text-decoration: none;
+      border: 0;
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      font-size: 0.92rem;
+      font-family: inherit;
+      cursor: pointer;
+      text-align: left;
+    }
+    .cta a:hover, .session-btn:hover { background: var(--mark); }
+    .session-btn {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+    }
+    .session-btn:hover { background: var(--ink); color: #f4efe6; }
+    .sid-wrap {
+      margin: 0.7rem 0 0;
+    }
+    .sid-wrap .hint {
+      margin: 0 0 0.25rem;
+      font-size: 0.78rem;
+      color: var(--mute);
+    }
+    .sid {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      line-height: 1.5;
+      word-break: break-all;
+      user-select: all;
+      color: #2c2a26;
+    }
+    .toast {
+      position: fixed;
+      bottom: 4.2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      background: var(--ink);
+      color: #f4efe6;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.8rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s, transform .2s;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    footer {
+      margin-top: 2rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--mute);
+    }
+    .float {
+      position: fixed;
+      left: 50%;
+      bottom: 1.1rem;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      z-index: 20;
+    }
+    .float a, .float button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 8.5rem;
+      background: var(--mark);
+      color: #eef8f2;
+      text-decoration: none;
+      border: 0;
+      padding: 0.85rem 1.15rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      text-align: center;
+    }
+    .float button { background: var(--ink); }
+    .float a:hover, .float button:hover { opacity: 0.88; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav-buttons">
+      <a href="/" class="nav-btn active">Home</a>
+      <a href="/leaks" class="nav-btn">Leaks</a>
+    </div>
+    <p class="stamp">IAmNotAVillain.xyz</p>
+    <h1>IAmNotAVillain</h1>
+    <p class="sub">Revolut user database</p>
+    <nav class="jump">
+      <a href="#notice">Notice</a>
+      <a href="#warning">Warning</a>
+      <a href="#why">Why it matters</a>
+      <a href="#stored">What is stored</a>
+      <a href="#jurisdiction">Jurisdiction</a>
+      <a href="#press">Press</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="card" id="notice">
+      <h2>Notice</h2>
+      <p>
+        Revolut got a report about a user database. They ignored it, so we are
+        exposing them for failing to keep user information secure, and for sending
+        data from a different jurisdiction.
+      </p>
+      <p>
+        We have everything, including KYC documents, address, phone number, email,
+        bank accounts, and fiat and crypto transactions.
+      </p>
+    </div>
+
+    <div class="card" id="warning">
+      <h2>Warning</h2>
+      <p>
+        An impersonator and scammer who used to work with us took a small
+        sample we handed him and is now claiming the breach as his. That cut
+        is not the full set.
+        Revolut and the other companies sent the data to us. He did not do this.
+        We can prove it: the originals, the volume, the conversations, and the companies that sent it.
+        Do not deal with him. You WILL get scammed.
+      </p>
+    </div>
+
+    <div class="card" id="why">
+      <h2>Why it matters</h2>
+      <p>
+        Your KYC documents stay the same. It is the file they keep on you:
+        name, mail, phone, address, account identifiers, ID scans.
+      </p>
+      <p>
+        That is enough to impersonate support, reset access, or try the same
+        profile on another service. A bank is supposed to keep that closed.
+      </p>
+    </div>
+
+    <div class="card" id="stored">
+      <h2>What is stored</h2>
+      <ul>
+        <li>Full name</li>
+        <li>Email</li>
+        <li>Phone number</li>
+        <li>Address</li>
+        <li>Account identifiers</li>
+        <li>Bank account identifiers</li>
+        <li>Crypto withdrawals</li>
+        <li>Crypto deposits</li>
+        <li>Fiat transactions (bank sends and receives)</li>
+        <li>KYC documents</li>
+        <li>KYC verification selfie</li>
+      </ul>
+
+      <div class="proof">
+        <!-- replace proof.jpg with the screenshot -->
+        <img src="Screenshot_38.png" alt="">
+      </div>
+      <div class="proof">
+        <img src="screenshit35.jpg" alt="">
+      </div>
+      <p class="caption">Proof of Revolut sending data. This is just one request out of many.</p>
+    </div>
+
+    <div class="card" id="jurisdiction">
+      <h2>Jurisdiction</h2>
+      <p>
+        Revolut is based in one place and still moved customer records from
+        another. That is not how this is supposed to work.
+      </p>
+      <div class="proof">
+        <!-- replace jurisdiction.jpg -->
+        <img src="Untitled.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="card" id="press">
+      <h2>Press</h2>
+      <p>
+        The public fact is an ignored report and a user database at scale.
+        Get Revolut on record before you treat the rest as given.
+        Telegram or Session.
+      </p>
+    </div>
+
+    <div class="card" id="contact">
+      <h2>Contact</h2>
+      <p>Same place for staff, press, and users.</p>
+      <div class="cta">
+        <a href="https://t.me/iamnotavillain3" rel="noopener noreferrer" target="_blank">Telegram</a>
+        <button class="session-btn" type="button" data-copy="0548b3c2be496218baa2314386787badfd458a868240a19ede82eabb6a13dd2c26">
+          Session
+        </button>
+        <div class="sid-wrap">
+          <p class="hint">If the button fails, copy the Session ID:</p>
+          <p class="sid">0548b3c2be496218baa2314386787badfd458a868240a19ede82eabb6a13dd2c26</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>IAmNotAVillain · IAmNotAVillain.xyz</footer>
+  </div>
+  <div class="float">
+    <a href="https://t.me/IAmNotAVillain3" rel="noopener noreferrer" target="_blank">Telegram</a>
+    <button type="button" data-copy="0548b3c2be496218baa2314386787badfd458a868240a19ede82eabb6a13dd2c26">Session</button>
+  </div>
+  <div class="toast" id="toast">Copied ID to clipboard</div>
+  <script>
+    const ID = "0548b3c2be496218baa2314386787badfd458a868240a19ede82eabb6a13dd2c26";
+    const toast = document.getElementById("toast");
+    function copyId() {
+      navigator.clipboard.writeText(ID).then(() => {
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1600);
+      });
+    }
+    document.querySelectorAll("[data-copy]").forEach(el => el.addEventListener("click", copyId));
+  </script>
+</body>
+</html>
