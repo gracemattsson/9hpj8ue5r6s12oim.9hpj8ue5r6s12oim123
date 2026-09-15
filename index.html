@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IAmNotAVillain</title>
-  <meta name="description" content="ImNotAVillain.xyz">
+  <title>Leaks — ImNotAVillain</title>
+  <meta name="description" content="ImNotAVillain.xyz leaks">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;560;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
       font-family: "Instrument Sans", sans-serif;
     }
     .wrap {
-      max-width: 36rem;
+      max-width: 90rem;
       margin: 0 auto;
       padding: 3rem 1.25rem 5.5rem;
     }
@@ -79,7 +79,6 @@
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.78rem;
     }
-    html { scroll-behavior: smooth; }
     .jump {
       display: flex;
       flex-wrap: wrap;
@@ -96,129 +95,48 @@
       color: var(--ink);
       border-bottom-color: var(--ink);
     }
-    .proof {
-      margin-top: 1.1rem;
-    }
-    .proof img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid var(--ink);
-      background: #ddd8cc;
-    }
-    .proof .blurred {
-      filter: blur(10px);
-    }
-    .proof .ph {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      border: 1px solid var(--ink);
-      background: #d8d2c4;
-      color: var(--mute);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .proof .ph.blurred {
-      filter: blur(8px);
-      user-select: none;
-    }
-    .caption {
-      margin: 0.45rem 0 1.1rem;
-      color: var(--mute);
-      font-size: 0.88rem;
-    }
     .card {
       background: var(--paper);
       border: 1px solid var(--line);
       padding: 1.35rem 1.2rem;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
+      break-inside: avoid;
+      display: inline-block;
+      width: 100%;
+    }
+    .cards-grid {
+      column-count: 3;
+      column-gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 768px) {
+      .cards-grid {
+        column-count: 1;
+      }
     }
     h2 {
-      margin: 0 0 0.7rem;
+      margin: 0 0 0.35rem;
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.7rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--mark);
     }
-    p { margin: 0 0 0.75rem; font-size: 1rem; line-height: 1.55; color: #26241f; }
-    p:last-child { margin-bottom: 0; }
-    ul {
-      margin: 0;
-      padding: 0 0 0 1.1rem;
-      color: #26241f;
-      font-size: 0.96rem;
-      line-height: 1.6;
-    }
-    .cta {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 1.2rem;
-    }
-    .cta a, .session-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--ink);
-      color: #f4efe6;
-      text-decoration: none;
-      border: 0;
-      padding: 0.75rem 1rem;
-      font-weight: 600;
-      font-size: 0.92rem;
-      font-family: inherit;
-      cursor: pointer;
-      text-align: left;
-    }
-    .cta a:hover, .session-btn:hover { background: var(--mark); }
-    .session-btn {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.35rem;
-      background: transparent;
-      color: var(--ink);
-      border: 1px solid var(--ink);
-    }
-    .session-btn:hover { background: var(--ink); color: #f4efe6; }
-    .sid-wrap {
-      margin: 0.7rem 0 0;
-    }
-    .sid-wrap .hint {
-      margin: 0 0 0.25rem;
-      font-size: 0.78rem;
+    .meta {
+      margin: 0 0 0.75rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
       color: var(--mute);
     }
-    .sid {
-      margin: 0;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.7rem;
-      line-height: 1.5;
-      word-break: break-all;
-      user-select: all;
-      color: #2c2a26;
-    }
-    .toast {
-      position: fixed;
-      bottom: 4.2rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(8px);
-      background: var(--ink);
-      color: #f4efe6;
-      padding: 0.5rem 0.8rem;
-      font-size: 0.8rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .2s, transform .2s;
-    }
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
+    p { margin: 0 0 0.75rem; font-size: 1rem; line-height: 1.55; color: #26241f; }
+    p:last-child { margin-bottom: 0; }
+    .proof { margin-top: 1rem; }
+    .proof img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--ink);
+      background: #ddd8cc;
     }
     footer {
       margin-top: 2rem;
@@ -257,130 +175,254 @@
     }
     .float button { background: var(--ink); }
     .float a:hover, .float button:hover { opacity: 0.88; }
+    .toast {
+      position: fixed;
+      bottom: 4.2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      background: var(--ink);
+      color: #f4efe6;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.8rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s, transform .2s;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="nav-buttons">
-      <a href="/" class="nav-btn active">Home</a>
-      <a href="/leaks" class="nav-btn">Leaks</a>
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="leaks.html" class="nav-btn active">Leaks</a>
     </div>
     <p class="stamp">ImNotAVillain.xyz</p>
-    <h1>IAmNotAVillain</h1>
-    <p class="sub">Revolut user database</p>
+    <h1>Leaks</h1>
+    <p class="sub"></p>
     <nav class="jump">
-      <a href="#notice">Notice</a>
-      <a href="#warning">Warning</a>
-      <a href="#why">Why it matters</a>
-      <a href="#stored">What is stored</a>
-      <a href="#jurisdiction">Jurisdiction</a>
-      <a href="#press">Press</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html">Main</a>
+      <a href="#latest">Latest</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
-
-    <div class="card" id="notice">
-      <h2>Notice</h2>
-      <p>
-        Revolut got a report about a user database. They ignored it, so we are
-        exposing them for failing to keep user information secure, and for sending
-        data from a different jurisdiction.
-      </p>
-      <p>
-        We have everything, including KYC documents, address, phone number, email,
-        bank accounts, and fiat and crypto transactions.
-      </p>
-    </div>
-
-    <div class="card" id="warning">
-      <h2>Warning</h2>
-      <p>
-        An impersonator and scammer who used to work with us took a small
-        sample we handed him and is now claiming the breach as his. That cut
-        is not the full set.
-        Revolut and the other companies sent the data to us. He did not do this.
-        We can prove it: the originals, the volume, the conversations, and the companies that sent it.
-        Do not deal with him. You WILL get scammed.
-      </p>
-    </div>
-
-    <div class="card" id="why">
-      <h2>Why it matters</h2>
-      <p>
-        Your KYC documents stay the same. It is the file they keep on you:
-        name, mail, phone, address, account identifiers, ID scans.
-      </p>
-      <p>
-        That is enough to impersonate support, reset access, or try the same
-        profile on another service. A bank is supposed to keep that closed.
-      </p>
-    </div>
-
-    <div class="card" id="stored">
-      <h2>What is stored</h2>
-      <ul>
-        <li>Full name</li>
-        <li>Email</li>
-        <li>Phone number</li>
-        <li>Address</li>
-        <li>Account identifiers</li>
-        <li>Bank account identifiers</li>
-        <li>Crypto withdrawals</li>
-        <li>Crypto deposits</li>
-        <li>Fiat transactions (bank sends and receives)</li>
-        <li>KYC documents</li>
-        <li>KYC verification selfie</li>
-      </ul>
-
-      <div class="proof">
-        <!-- replace proof.jpg with the screenshot -->
-        <img src="images/Screenshot_38.png" alt="">
+    <div class="cards-grid">
+      <div class="card" id="latest">
+        <h2>Wade Adam Keith</h2>
+        <p class="meta">001</p>
+        <p>
+          Another incident of Revolut sending data from UK jurisdiction
+        </p>
+        <div class="proof">
+          <img src="images/image (24).jpg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/photo123.jpg" alt="">
+        </div>
       </div>
-      <div class="proof">
-        <img src="images/screenshit35.jpg" alt="">
+
+      <div class="card">
+        <h2>Bodin Fredrik</h2>
+        <p class="meta">004</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://biteblob.com/Information/u03rvXYZmtsaGW/#Irfan" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://biteblob.com/Information/FyKSNlvrBTgSh7/#Irfan" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <p>
+        
+        </p>
+        <div class="proof">
+          <img src="images/002/4e7afa6a-4a8d-4b21-8e50-22d0b0817903.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/002/ac896a91-0c11-4816-8fe2-be1ee4d0be91.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/002/febaad58-be4e-42ff-9a71-43bd9d91c11c.jpeg" alt="">
+        </div>
       </div>
-      <p class="caption">Proof of Revolut sending data. This is just one request out of many.</p>
-    </div>
 
-    <div class="card" id="jurisdiction">
-      <h2>Jurisdiction</h2>
-      <p>
-        Revolut is based in one place and still moved customer records from
-        another. That is not how this is supposed to work.
-      </p>
-      <div class="proof">
-        <!-- replace jurisdiction.jpg -->
-        <img src="images/Untitled.jpg" alt="">
+      <div class="card">
+        <h2>Kokli</h2>
+        <p class="meta">007</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://roblox.com" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://roblox.com" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <div class="proof">
+          <img src="images/003/20533301-3fd4-4504-9806-8f4d262dea16.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/003/2c136fd6-2e33-4f0b-848d-9af2317fba14.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/003/c6bea7b4-5053-430a-845d-3b59df10ae42.jpeg" alt="">
+        </div>
       </div>
-    </div>
 
-    <div class="card" id="press">
-      <h2>Press</h2>
-      <p>
-        The public fact is an ignored report and a user database at scale.
-        Get Revolut on record before you treat the rest as given.
-        Telegram or Session.
-      </p>
-    </div>
+      <div class="card">
+        <h2>Kraft</h2>
+        <p class="meta">010</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://biteblob.com/Information/rPUUi7czBn6oTd/#Jonas" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://biteblob.com/Information/FgtgfdfOqxwr7M/#Jonas" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <div class="proof">
+          <img src="images/004/image (30).jpg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/004/image2.jpg" alt="">
+        </div>
+      </div>
 
-    <div class="card" id="contact">
-      <h2>Contact</h2>
-      <p>Same place for staff, press, and users.</p>
-      <div class="cta">
-        <a href="https://t.me/iamnotavillain3" rel="noopener noreferrer" target="_blank">Telegram</a>
-        <button class="session-btn" type="button" data-copy="0548b3c2be496218baa2314386787badfd458a868240a19ede82eabb6a13dd2c26">
-          Session
-        </button>
-        <div class="sid-wrap">
-          <p class="hint">If the button fails, copy the Session ID:</p>
-          <p class="sid">0548b3c2be496218baa2314386787badfd458a868240a19ede82eabb6a13dd2c26</p>
+      <div class="card">
+        <h2>Liu</h2>
+        <p class="meta">002</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://biteblob.com/Information/MpQ4euGlV4AHBO/#Kaiming" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://biteblob.com/Information/nSY8yvPc4Q5F94/#Kaiming" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <div class="proof">
+          <img src="images/005/face.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/005/front.jpeg" alt="">
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Tabacko</h2>
+        <p class="meta">005</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://biteblob.com/Information/YsKcHSasCBsOg8/#Maro" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://biteblob.com/Information/PwA9tPfTTgGwSj/#Maro" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <div class="proof">
+          <img src="images/006/0a453018-f65e-49bf-a503-e044bc57c06e.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/006/94e5bca5-bd57-4753-b337-0e3b5ce5f894.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/006/f81c3b0f-abb6-4383-8c8d-e5785052c9f3.jpeg" alt="">
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Mortel</h2>
+        <p class="meta">008</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://biteblob.com/Information/2Z4DIR6z8fwwgd/#PETRUS" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://biteblob.com/Information/AKsluczy3MD3LT/#PETRUS" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <div class="proof">
+          <img src="images/007/422be533-b738-4ee8-9394-fff5b0f182e3.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/007/5d0993fc-9f1f-4407-acf8-5c069bcf20c4.jpeg" alt="">
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Klaassen</h2>
+        <p class="meta">009</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://biteblob.com/Information/3Vf3xcNUBDUKlO/#Ricardo" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://biteblob.com/Information/dBUaYBhhArdxY7/#Ricardo" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <div class="proof">
+          <img src="images/008/5da8b7bc-8ff2-4601-b5d4-16116603a102.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/008/ba7970fb-a15f-48cc-868a-70c7f16b9a85.jpeg" alt="">
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Alontsau</h2>
+        <p class="meta">003</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://biteblob.com/Information/XvExUAeVlZQRMt/#Siarhei" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://biteblob.com/Information/lCYW6UhwAKUxP2/#Siarhei" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <div class="proof">
+          <img src="images/009/37265b5c-c072-4973-96a2-1deea081b98f.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/009/48732529-9974-42ea-8e60-d625f164619d.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/009/898e9d20-e657-4bed-85fb-d368ab1fde93.jpeg" alt="">
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Motlik</h2>
+        <p class="meta">006</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://biteblob.com/Information/RnMSG6l5n34kad/#Vladimir" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://biteblob.com/Information/mubsVYhfq1PRYf/#Vladimir" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <div class="proof">
+          <img src="images/010/51c1b51e-9273-4eda-93d5-202bba0b8736.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/010/b46543b8-bef7-413d-9e89-5b6cfb5a7dbd.jpeg" alt="">
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Timmermans</h2>
+        <p class="meta">011</p>
+        <div style="display: flex; gap: 0.5rem; margin: 0.5rem 0;">
+          <a href="https://biteblob.com/Information/TupKJpkMuqwzkB/#Vienna" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">account data</a>
+          <a href="https://biteblob.com/Information/YuTYwNDG7VNGd8/#Vienna" style="flex: 1; display: inline-block; background: var(--ink); color: #f4efe6; padding: 0.75rem 1.5rem; text-decoration: none; font-size: 1rem; font-weight: 600; text-align: center;">transactions</a>
+        </div>
+        <p style="color: var(--mark); margin: 0.5rem 0;">
+          password: ImNotAVillain
+        </p>
+        <div class="proof">
+          <img src="images/011/3fcbf48e-740b-4a4f-b4bc-afe776c02c02.jpeg" alt="">
+        </div>
+        <div class="proof">
+          <img src="images/011/534b4f59-479c-4b40-bbc4-133863a5d752.jpeg" alt="">
         </div>
       </div>
     </div>
 
-    <footer>IAmNotAVillain · ImNotAVillain.xyz</footer>
+    <footer>ImNotAVillain · leaks</footer>
   </div>
   <div class="float">
-    <a href="https://t.me/iamnotavillain3" rel="noopener noreferrer" target="_blank">Telegram</a>
+    <a href="https://t.me/imnotavillain3" rel="noopener noreferrer" target="_blank">Telegram</a>
     <button type="button" data-copy="0548b3c2be496218baa2314386787badfd458a868240a19ede82eabb6a13dd2c26">Session</button>
   </div>
   <div class="toast" id="toast">Copied ID to clipboard</div>
